@@ -39,12 +39,6 @@ public class EntityDamageByEntityListener implements Listener {
             }
         }
 
-        if(damager.getType() == EntityType.PLAYER || damager.getType() == EntityType.PLAYER) {
-            PlayerTagEvent playerTagEvent = new PlayerTagEvent(damager, defender, this.plugin.tagDuration);
-            this.plugin.getServer().getPluginManager().callEvent(playerTagEvent);
-            return;
-        }
-
         if(damager instanceof Projectile) {
             if(((Projectile) damager).getShooter() instanceof Player) {
                 Player player = ((Player) ((Projectile) damager).getShooter()).getPlayer();
@@ -54,7 +48,14 @@ public class EntityDamageByEntityListener implements Listener {
 
                 PlayerTagEvent playerTagEvent = new PlayerTagEvent(player, defender, this.plugin.tagDuration);
                 this.plugin.getServer().getPluginManager().callEvent(playerTagEvent);
+                return;
             }
+        }
+
+        if(damager.getType() == EntityType.PLAYER || defender.getType() == EntityType.PLAYER) {
+            PlayerTagEvent playerTagEvent = new PlayerTagEvent(damager, defender, this.plugin.tagDuration);
+            this.plugin.getServer().getPluginManager().callEvent(playerTagEvent);
+            return;
         }
     }
 }
