@@ -37,23 +37,22 @@ public class PlayerTagListener implements Listener {
     }
 
     private void tagPlayer(Player player, String damager) {
+        long timeTagged = this.plugin.getCurrentTime();
         if(!this.plugin.taggedPlayers.containsKey(player.getName())) {
-            this.plugin.taggedPlayers.put(player.getName(), this.plugin.getCurrentTime());
             if (this.plugin.taggedMessageEnabled) {
                 player.sendMessage(this.plugin.translateText(this.plugin.taggedMessage.replaceAll("<name>", damager)));
             }
 
             if (this.plugin.useActionBar) {
                 if (this.plugin.newActionBar) {
-                    this.plugin.aBar.sendActionBarNew(player, this.plugin.actionBarInCombatMessage.replaceAll("<time>", this.plugin.tagTimeRemaining(player.getName())));
+                    this.plugin.aBar.sendActionBarNew(player, this.plugin.actionBarInCombatMessage.replaceAll("<time>", String.valueOf(timeTagged)));
                 } else {
-                    this.plugin.aBar.sendActionBarOld(player, this.plugin.actionBarInCombatMessage.replaceAll("<time>", this.plugin.tagTimeRemaining(player.getName())));
+                    this.plugin.aBar.sendActionBarOld(player, this.plugin.actionBarInCombatMessage.replaceAll("<time>", String.valueOf(timeTagged)));
                 }
             }
-        } else {
-            this.plugin.taggedPlayers.remove(player.getName());
-            this.plugin.taggedPlayers.put(player.getName(), this.plugin.getCurrentTime());
         }
+
+        this.plugin.taggedPlayers.put(player.getName(), timeTagged);
 
         if (this.plugin.removeDisguiseEnabled) {
             this.plugin.removeDisguise(player);
