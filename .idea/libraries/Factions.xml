@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Factions">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../Factions-2.14.0/Factions.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../Factions-2.14.0/MassiveCore.jar!/" />
+      <root url="jar://$USER_HOME$/Загрузки/Factions-2.14.0/Factions.jar!/" />
+      <root url="jar://$USER_HOME$/Загрузки/Factions-2.14.0/MassiveCore.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../Factions-2.14.0/Factions.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../Factions-2.14.0/MassiveCore.jar!/" />
+      <root url="jar://$USER_HOME$/Загрузки/Factions-2.14.0/Factions.jar!/" />
+      <root url="jar://$USER_HOME$/Загрузки/Factions-2.14.0/MassiveCore.jar!/" />
     </SOURCES>
   </library>
 </component>

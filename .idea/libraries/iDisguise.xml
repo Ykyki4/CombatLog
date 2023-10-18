@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="iDisguise">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../iDisguise.jar!/" />
+      <root url="jar://$USER_HOME$/Загрузки/iDisguise.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

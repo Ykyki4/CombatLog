@@ -40,9 +40,9 @@ public class EntityDamageByEntityListener implements Listener {
         }
 
         if(damager instanceof Projectile) {
-            if(((Projectile) damager).getShooter() instanceof Player) {
+            if (((Projectile) damager).getShooter() instanceof Player) {
                 Player player = ((Player) ((Projectile) damager).getShooter()).getPlayer();
-                if(player.hasPermission("combatlog.bypass")) {
+                if (player.hasPermission("combatlog.bypass")) {
                     return;
                 }
 
