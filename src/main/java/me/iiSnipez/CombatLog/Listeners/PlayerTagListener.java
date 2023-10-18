@@ -38,6 +38,7 @@ public class PlayerTagListener implements Listener {
 
     private void tagPlayer(Player player, String damager) {
         if(!this.plugin.taggedPlayers.containsKey(player.getName())) {
+            this.plugin.taggedPlayers.put(player.getName(), this.plugin.getCurrentTime());
             if (this.plugin.taggerMessageEnabled) {
                 if (this.plugin.taggedMessageEnabled) {
                     player.sendMessage(this.plugin.translateText(this.plugin.taggedMessage.replaceAll("<name>", damager)));
@@ -62,8 +63,6 @@ public class PlayerTagListener implements Listener {
         if (this.plugin.removeInvisPotion) {
             this.removePotion(player);
         }
-
-        this.plugin.taggedPlayers.put(player.getName(), this.plugin.getCurrentTime());
     }
 
 /*    private void tagDamager(Entity damager, Entity damagee) {

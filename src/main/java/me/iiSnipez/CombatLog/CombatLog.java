@@ -368,7 +368,7 @@ extends JavaPlugin {
     }
 
     public String tagTimeRemaining(String id) {
-        return "" + ((long)this.tagDuration - (this.getCurrentTime() - Long.valueOf(this.taggedPlayers.get(id))));
+        return "" + ((long)this.tagDuration - (this.getCurrentTime() - this.taggedPlayers.get(id)));
     }
 
     public long tagTime(String id) {
